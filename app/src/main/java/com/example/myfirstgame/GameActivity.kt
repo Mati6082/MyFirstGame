@@ -7,7 +7,6 @@ import android.view.MotionEvent
 import com.example.myfirstgame.databinding.ActivityGameBinding
 import java.util.Timer
 import java.util.TimerTask
-import kotlin.random.Random
 
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
@@ -19,7 +18,6 @@ class GameActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         var xDown = 0f
-
         binding.platform.setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
@@ -35,18 +33,16 @@ class GameActivity : AppCompatActivity() {
             true
         }
 
-        var lec = true
-
-        binding.platform.y = 1800f
-
+        var loop = true
         Timer().scheduleAtFixedRate(object : TimerTask() {
             override fun run() {
-                if (lec) {
+                if (loop) {
                     binding.cat.y += 10
-
-                    if (binding.cat.y > binding.platform.y) lec = false
+                    if (binding.cat.y.toDouble() == 0.8 * 1) loop = false
                 }
             }
-        }, 0, 5)
+        }, 0, 50)
+
+
     }
 }
