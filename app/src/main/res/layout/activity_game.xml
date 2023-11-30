@@ -7,23 +7,61 @@
     android:background="@drawable/game_background"
     tools:context=".GameActivity">
 
-    <View
+    <TextView
+        android:id="@+id/points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#80ffffff"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:text="Punkty: 0\nŻycia: 10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/platform"
-        android:layout_width="130dp"
-        android:layout_height="30dp"
+        android:text="DOTKNIJ"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:layout_width="150dp"
+        android:padding="10dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:background="@drawable/platform"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/cat"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/falling_object" />
+
+    <View
+        android:id="@+id/right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="48sp"
+        android:text="PRZEGRAŁEŚ"
+        android:background="#80ffffff"
+        android:padding="5dp"
+        android:id="@+id/endText"
+        android:visibility="invisible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
